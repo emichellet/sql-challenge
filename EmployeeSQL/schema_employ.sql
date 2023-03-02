@@ -5,8 +5,8 @@ dept_name VARCHAR
 
 employees
 -
-employ_no PK int
-employ_title_id VARCHAR FK >- titles.title_id
+emp_no PK int
+emp_title_id VARCHAR FK >- titles.title_id
 birth_date VARCHAR
 first_name VARCHAR
 last_name VARCHAR
@@ -14,7 +14,7 @@ sex VARCHAR
 hire_date VARCHAR
 
 -- Because the dept_employ table is a many-many relationship, two primary keys are needed
-dept_employ
+dept_emp
 -
 emp_no PK int FK >- employees.emp_no
 dept_no PK VARCHAR FK >- departments.dept_no
@@ -23,11 +23,11 @@ dept_no PK VARCHAR FK >- departments.dept_no
 dept_manager
 -
 dept_no PK VARCHAR FK >- departments.dept_no
-employ_no PK int FK >- employees.employ_no
+emp_no PK int FK >- employees.emp_no
 
 salaries
 -
-employ_no PK int FK - employees.employ_no
+emp_no PK int FK - employees.emp_no
 salary int
 
 titles
